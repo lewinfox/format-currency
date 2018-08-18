@@ -30,6 +30,9 @@ function formatCurrency(amount,
         amount = amount.split('.');
         major = amount[0];           // Pounds, dollars
         minor = amount[1];           // Pence, cents
+        if (minor.length == 1) {
+            minor += "0";
+        }
     } else {
         major = amount;
         minor = "00";
