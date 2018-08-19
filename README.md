@@ -7,14 +7,14 @@ Accepts numeric and string input. Choose your own currency symbol (default "£")
 Examples:
 ```javascript
 formatCurrency(1234.56)
-"£1,234.56"
+// "£1,234.56"
 
 formatCurrency(123456.789, prefix = "$")  // cents will not be printed 
-"$123,456"
+// "$123,456"
 
 formatCurrency(123456.789, prefix = "$", displayMinorUnitsLimit = 1000000)  // cents will be printed 
-"$123,456.79"
+// "$123,456.79"
 
 formatCurrency(123456.789, prefix = "$", displayMinorUnitsLimit = 1000000, majorSep = "!", decimalSep = "-") 
-"$123!456-79"
+// "$123!456-79"
 ```
