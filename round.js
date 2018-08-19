@@ -1,11 +1,11 @@
 function round(number, decimals) {
 
         if (typeof(number) != 'number') {
-            number = parseFloat(number);
+            number = parseFloat(number);  // TODO: Handle case where this returns NaN
         }
 
         if (typeof(decimals) != 'number') {
-            decimals = parseInt(decimals);
+            decimals = parseInt(decimals);  // TODO: Handle case where float is passed
         }
 
         // Allow positive and negative values for "decimals"
