@@ -6,7 +6,7 @@ function formatCurrency(amount, prefix = '£', displayMinorUnitsLimit = 10000,
     let isNegative = amount < 0;
 
     // If the number is negative, prepend a `-` to the prefix and multiply
-    // `major` by -1 to ensure it displays correctly
+    // `amount` by -1 to ensure it displays correctly
     if (isNegative) {
       prefix = `-${prefix}`;
       amount = -amount;
