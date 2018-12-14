@@ -1,11 +1,16 @@
-function formatCurrency(amount,
-                        prefix = '£',
-                        displayMinorUnitsLimit = 10000,
-                        majorSep = ',',
-                        decimalSep = '.') {
+function formatCurrency(amount, prefix = '£', displayMinorUnitsLimit = 10000,
+                        majorSep = ',', decimalSep = '.') {
 
     let major, minor;
     let truncateMinorUnits = parseFloat(amount) >= displayMinorUnitsLimit;
+    let isNegative = amount < 0;
+
+    // If the number is negative, prepend a `-` to the prefix and multiply
+    // `major` by -1 to ensure it displays correctly
+    if (isNegative) {
+      prefix = `-${prefix}`;
+      amount = -amount;
+    }
 
     // Define a rounding function to handle input like 123.4567.  Note that this
     // will not insert decimals - 10 is not converted to 10.00
